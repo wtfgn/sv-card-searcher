@@ -1,0 +1,6 @@
+node_modules
+dist
+prettier.config.cjs
+tsconfig.json
+.eslintrc.cjs
+vite.config.ts
