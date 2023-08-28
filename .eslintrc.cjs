@@ -4,7 +4,7 @@ module.exports = {
         'plugin:vue/vue3-recommended',
         'plugin:@typescript-eslint/recommended-type-checked',
         'plugin:@typescript-eslint/stylistic-type-checked',
-        'prettier',
+        // 'prettier',
     ],
     parser: 'vue-eslint-parser',
     parserOptions: {
