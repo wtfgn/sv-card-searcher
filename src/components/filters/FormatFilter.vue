@@ -3,11 +3,12 @@
     <template #title>
       <h3>Format</h3>
     </template>
+	
     <template #filter>
       <div class="filter-option">
         <label for="rotation">
           <img
-            src="/src/assets/emblems/icon_rotation.png"
+            src="/src/assets/format/icon_rotation.png"
             alt="Rotation"
             title="Rotation"
             class="emblem"
@@ -18,14 +19,15 @@
           id="rotation"
           v-model="selectedFormat"
           type="radio"
+          :checked="selectedFormat === 'rotation'"
           value="rotation"
           @change="emit('update:selectedFormat', selectedFormat)"
         >
       </div>
       <div class="filter-option">
-        <label for="rotation">
+        <label for="unlimited">
           <img
-            src="/src/assets/emblems/icon_unlimited.png"
+            src="/src/assets/format/icon_unlimited.png"
             alt="Unlimited"
             title="Unlimited"
             class="emblem"
@@ -35,6 +37,7 @@
         <input
           id="unlimited"
           v-model="selectedFormat"
+          :checked="selectedFormat === 'unlimited'"
           type="radio"
           value="unlimited"
           @change="emit('update:selectedFormat', selectedFormat)"
@@ -47,10 +50,12 @@
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
 import { Ref, ref } from 'vue';
+const props = defineProps<{ defaultFormat: string }>();
+const emit = defineEmits<{
+	'update:selectedFormat': [format: string];
+}>();
 
-const emit = defineEmits(['update:selectedFormat']);
-
-const selectedFormat: Ref<string> = ref('rotation');
+const selectedFormat: Ref<string> = ref(props.defaultFormat); // Default value
 
 </script>
 

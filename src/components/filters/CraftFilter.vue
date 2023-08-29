@@ -7,12 +7,12 @@
     <template #filter>
       <div
         v-for="craft in crafts"
-        :key="craft.id"
+        :key="craft.iconCardId"
         class="filter-options"
       >
         <label :for="craft.name">
           <img
-            :src="emblemUrl(craft.id)"
+            :src="emblemUrl(craft.iconCardId)"
             :alt="craft.name"
             :title="craft.name"
             class="emblem"
@@ -33,51 +33,20 @@
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
 import { Ref, ref } from 'vue';
+import { useMainStore } from '@/stores/main';
+import { storeToRefs } from 'pinia';
 
-const emit = defineEmits(['update:selectedCrafts']);
+const emit = defineEmits<{
+	'update:selectedCrafts': [crafts: string[]];
+}>();
+
 
 const selectedCrafts: Ref<string[]> = ref([]);
+const mainStore = useMainStore();
+const { crafts } = storeToRefs(mainStore);
 
 
-const crafts = ref([
-	{
-		name: 'Forestcraft',
-		id: '1111410100',
-	},
-	{
-		name: 'Swordcraft',
-		id: '1052210300',
-	},
-	{
-		name: 'Runecraft',
-		id: '900311020',
-	},
-	{
-		name: 'Dragoncraft',
-		id: '1124110300',
-	},
-	{
-		name: 'Shadowcraft',
-		id: '900541090',
-	},
-	{
-		name: 'Bloodcraft',
-		id: '1106110200',
-	},
-	{
-		name: 'Havencraft',
-		id: '1117410300',
-	},
-	{
-		name: 'Portalcraft',
-		id: '900841090',
-	},
-	{
-		name: 'Neutral',
-		id: '1080110200',
-	},
-]);
-const emblemUrl = ((emblemId: string) => {
+const emblemUrl = ((emblemId: number | string) => {
 	return `https://svgdb.me/assets/emblems/em_${emblemId}_m.png`
 });
 </script>
