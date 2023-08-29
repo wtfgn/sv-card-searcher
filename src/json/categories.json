@@ -1,0 +1,168 @@
+{
+	"cardPacks": [
+		{
+			"name": "Heroes of Rivenbrandt"
+		},
+		{
+			"name": "Academy of Ages"
+		},
+		{
+			"name": "Eightfold Abyss Azvaldt"
+		},
+		{
+			"name": "Celestial Dragonblade"
+		},
+		{
+			"name": "Roar of the Godwyrm"
+		},
+		{
+			"name": "Edge of Paradise"
+		},
+		{
+			"name": "Omen of Storms"
+		},
+		{
+			"name": "Dawn of Calamity"
+		},
+		{
+			"name": "Renascent Chronicles"
+		},
+		{
+			"name": "Darkness Over Vellsar"
+		},
+		{
+			"name": "Eternal Awakening"
+		},
+		{
+			"name": "Storm Over Rivayle"
+		},
+		{
+			"name": "Fortunes Hand"
+		},
+		{
+			"name": "World Uprooted"
+		},
+		{
+			"name": "Ultimate Colosseum"
+		},
+		{
+			"name": "Verdant Conflict"
+		},
+		{
+			"name": "Rebirth of Glory"
+		},
+		{
+			"name": "Steel Rebellion"
+		},
+		{
+			"name": "Altersphere"
+		},
+		{
+			"name": "Omen of the Ten"
+		},
+		{
+			"name": "Brigade of the Sky"
+		},
+		{
+			"name": "Dawnbreak, Nightedge"
+		},
+		{
+			"name": "Chronogenesis"
+		},
+		{
+			"name": "Starforged Legends"
+		},
+		{
+			"name": "Wonderland Dreams"
+		},
+		{
+			"name": "Tempest of the Gods"
+		},
+		{
+			"name": "Rise of Bahamut"
+		},
+		{
+			"name": "Darkness Evolved"
+		},
+		{
+			"name": "Classic"
+		},
+		{
+			"name": "Basic"
+		},
+		{
+			"name": "Token"
+		}
+	],
+	"crafts": [
+		{
+			"name": "Forestcraft",
+			"iconCardId": 1111410100
+		},
+		{
+			"name": "Swordcraft",
+			"iconCardId": 1052210300
+		},
+		{
+			"name": "Runecraft",
+			"iconCardId": 900311020
+		},
+		{
+			"name": "Dragoncraft",
+			"iconCardId": 1124110300
+		},
+		{
+			"name": "Shadowcraft",
+			"iconCardId": 900541090
+		},
+		{
+			"name": "Bloodcraft",
+			"iconCardId": 1106110200
+		},
+		{
+			"name": "Havencraft",
+			"iconCardId": 1117410300
+		},
+		{
+			"name": "Portalcraft",
+			"iconCardId": 900841090
+		},
+		{
+			"name": "Neutral",
+			"iconCardId": 1080110200
+		}
+	],
+	"rarities": [
+		{
+			"name": "Bronze"
+		},
+		{
+			"name": "Silver"
+		},
+		{
+			"name": "Gold"
+		},
+		{
+			"name": "Legendary"
+		}
+	],
+	"formats": [
+		{
+			"name": "Rotation"
+		},
+		{
+			"name": "Unlimited"
+		}
+	],
+	"types": [
+		{
+			"name": "Follower"
+		},
+		{
+			"name": "Spell"
+		},
+		{
+			"name": "Amulet"
+		}
+	]
+}
