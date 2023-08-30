@@ -12,4 +12,27 @@
 <script setup lang="ts">
 </script>
 
-<style scoped></style>
+<style scoped>
+.filter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.filter-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: #616161;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+</style>
