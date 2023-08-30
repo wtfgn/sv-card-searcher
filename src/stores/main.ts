@@ -1,4 +1,4 @@
-import { Card, CardPack, Craft, Rarity, Format, Type } from '@/types';
+import { Card, CardPack, Craft, Format, Rarity, Type, Cost } from '@/types';
 import { defineStore } from 'pinia';
 import axios from 'axios';
 import categories from '@/json/categories.json'
@@ -32,6 +32,9 @@ export const useMainStore = defineStore('main', {
 		types(): Type[] {
 			return categories.types;
 		},
+		costs(): Cost[] {
+			return categories.costs;
+		}
 	},
 	actions: {
 		async fetchCardsData(): Promise<RawCardsData> {
