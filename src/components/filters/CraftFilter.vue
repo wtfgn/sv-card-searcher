@@ -8,9 +8,16 @@
       <div
         v-for="craft in crafts"
         :key="craft.iconCardId"
-        class="filter-options"
+        class="filter-option"
       >
         <label :for="craft.name">
+          <input
+            :id="craft.name"
+            v-model="selectedCrafts"
+            type="checkbox"
+            :value="craft.name"
+            @change="emit('update:selectedCrafts', selectedCrafts)"
+          >
           <img
             :src="emblemUrl(craft.iconCardId)"
             :alt="craft.name"
@@ -18,13 +25,6 @@
             class="emblem"
           >
         </label>
-        <input
-          :id="craft.name"
-          v-model="selectedCrafts"
-          type="checkbox"
-          :value="craft.name"
-          @change="emit('update:selectedCrafts', selectedCrafts)"
-        >
       </div>
     </template>
   </FilterTemplate>
@@ -37,9 +37,8 @@ import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
 
 const emit = defineEmits<{
-	'update:selectedCrafts': [crafts: string[]];
+  'update:selectedCrafts': [crafts: string[]];
 }>();
-
 
 const selectedCrafts: Ref<string[]> = ref([]);
 const mainStore = useMainStore();
@@ -47,6 +46,43 @@ const { crafts } = storeToRefs(mainStore);
 
 
 const emblemUrl = ((emblemId: number | string) => {
-	return `https://svgdb.me/assets/emblems/em_${emblemId}_m.png`
+  return `https://svgdb.me/assets/emblems/em_${emblemId}_m.png`
 });
 </script>
+
+<style scoped>
+.craft-filter :deep(.filter-container) {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.filter-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-option label:hover,
+.filter-option label input:checked+.emblem {
+  opacity: 1;
+}
+
+.filter-option input {
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.emblem {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.5;
+}
+</style>

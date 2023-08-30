@@ -1,11 +1,25 @@
 <template>
-  <FilterTemplate>
+  <FilterTemplate class="card-pack-filter">
     <template #title>
       <h3>Card Pack</h3>
     </template>
 
     <template #filter>
-      <div class="filter-option" />
+      <div
+        v-for="cardPack in cardPacks"
+        :key="cardPack.name"
+        class="filter-option"
+      >
+        <label>
+          <input
+            v-model="selectedCardPacks"
+            type="checkbox"
+            :value="cardPack.name"
+            @change="emit('update:selectedCardPacks', selectedCardPacks)"
+          >
+          {{ cardPack.name }}
+        </label>
+      </div>
     </template>
   </FilterTemplate>
 </template>
@@ -14,12 +28,22 @@
 import FilterTemplate from '@/components/FilterTemplate.vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
+import { Ref, ref } from 'vue';
+
+const emit = defineEmits<{
+  'update:selectedCardPacks': [cardPacks: string[]];
+}>();
 
 const mainStore = useMainStore();
 const { cardPacks } = storeToRefs(mainStore);
-
-console.log(cardPacks.value);
+const selectedCardPacks: Ref<string[]> = ref([]);
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.card-pack-filter :deep(.filter-container) {
+  display: flex;
+  flex-direction: column;
+}
+
+</style>
