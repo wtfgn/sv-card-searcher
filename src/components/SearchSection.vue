@@ -9,20 +9,35 @@
   <CardPackFilter
     v-model:selectedCardPacks="selectedCardPacks"
   />
+  <CostFilter
+    v-model:selectedCosts="selectedCosts"
+  />
+  <TypeFilter
+    v-model:selectedTypes="selectedTypes"
+  />
+  <RarityFilter
+    v-model:selectedRarities="selectedRarities"
+  />
 </template>
 
 <script setup lang="ts">
 import CraftFilter from '@/components/filters/CraftFilter.vue';
 import FormatFilter from '@/components/filters/FormatFilter.vue';
 import CardPackFilter from '@/components/filters/CardPackFilter.vue';
+import CostFilter from '@/components/filters/CostFilter.vue';
+import TypeFilter from '@/components/filters/TypeFilter.vue';
+import RarityFilter from '@/components/filters/RarityFilter.vue';
 import { Ref, ref, onUnmounted } from 'vue';
 import { useMainStore } from '@/stores/main';
 
 const mainStore = useMainStore();
 
 const selectedCrafts: Ref<string[]> = ref([]);
-const selectedFormat: Ref<string> = ref('rotation');
+const selectedFormat: Ref<'rotation' | 'unlimited'> = ref('rotation');
 const selectedCardPacks: Ref<string[]> = ref([]);
+const selectedCosts: Ref<string[]> = ref([]);
+const selectedTypes: Ref<string[]> = ref([]);
+const selectedRarities: Ref<string[]> = ref([]);
 
 // Useful for debugging
 const unsubscribe = mainStore.$onAction(
@@ -48,8 +63,8 @@ const unsubscribe = mainStore.$onAction(
 	}
 )
 
-const rawCardsData = await mainStore.fetchCardsData();
-mainStore.setRawCardsData(rawCardsData);
+// const rawCardsData = await mainStore.fetchCardsData();
+// mainStore.setRawCardsData(rawCardsData);
 
 onUnmounted(() => {
 	unsubscribe();
