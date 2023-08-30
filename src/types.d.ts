@@ -1,3 +1,5 @@
+import categories from '@/json/categories.json'
+
 export interface Card {
 	alts_: string[];
 	baseAtk_: number;
@@ -23,23 +25,9 @@ export interface Card {
 	type_: string;
 }
 
-export interface CardPack {
-	name: string;
-}
-
-export interface Craft {
-	name: string;
-	iconCardId: number;
-}
-
-export interface Rarity {
-	name: string;
-}
-
-export interface Format {
-	name: string;
-}
-
-export interface Type {
-	name: string;
-}
+export type CardPack = typeof categories.cardPacks[number] 
+export type Craft = typeof categories.crafts[number]
+export type Rarity = typeof categories.rarities[number]
+export type Format = typeof categories.formats[number]
+export type Type = typeof categories.types[number]
+export type Cost = typeof categories.costs[number]
