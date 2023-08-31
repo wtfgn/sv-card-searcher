@@ -19,7 +19,7 @@
 
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import FilterOptionCheckbox from '@/components/FilterOptionCheckbox.vue';
+import FilterOptionCheckbox from '@/components/filter_option/FilterOptionCheckbox.vue';
 import { computed } from 'vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';

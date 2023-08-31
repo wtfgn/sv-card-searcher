@@ -20,7 +20,7 @@
 
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import FilterOptionRadio from '@/components/FilterOptionRadio.vue';
+import FilterOptionRadio from '@/components/filter_option/FilterOptionRadio.vue';
 import { computed } from 'vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
