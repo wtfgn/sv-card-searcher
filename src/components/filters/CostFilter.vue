@@ -5,39 +5,29 @@
     </template>
 
     <template #filter>
-      <div
+      <FilterOptionCheckbox
         v-for="cost in costs"
-        :key="cost.value"
-        class="filter-option"
-      >
-        <label :for="cost.value">
-          <img
-            :src="costUrl(cost)"
-            :alt="cost.value"
-            :title="cost.value"
-            class="cost-icon"
-          >
-          <input 
-            :id="cost.value"
-            v-model="selectedCosts"
-            type="checkbox"
-            :value="cost.value"
-            @change="emit('update:selectedCosts', selectedCosts)"
-          >
-          {{ cost.value }}
-        </label>
-      </div>
+        :key="cost.name"
+        v-model:selected-options="model"
+        :filter-option="cost"
+        :label-text="cost.name"
+        :image-url="costUrl(cost)"
+      />
     </template>
   </FilterTemplate>
 </template>
 
 <script setup lang="ts">
 import FilterTemplate from '@/components/FilterTemplate.vue';
+import FilterOptionCheckbox from '@/components/FilterOptionCheckbox.vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
-import { Ref, ref } from 'vue';
+import { computed } from 'vue';
 import { Cost } from '@/types';
 
+const props = defineProps<{
+  selectedCosts: string[];
+}>();
 const emit = defineEmits<{
   'update:selectedCosts': [costs: string[]];
 }>();
@@ -45,10 +35,13 @@ const emit = defineEmits<{
 const mainStore = useMainStore();
 const { costs } = storeToRefs(mainStore);
 
-const selectedCosts: Ref<string[]> = ref([]);
+const model = computed({
+  get: () => props.selectedCosts,
+  set: (value) => emit('update:selectedCosts', value),
+});
 
 const costUrl = ((cost: Cost) => {
-  return `https://shadowverse-portal.com/public/assets/image/common/global/cost_${cost.value}.png`
+  return `https://shadowverse-portal.com/public/assets/image/common/global/cost_${cost.name}.png`
 });
 </script>
 

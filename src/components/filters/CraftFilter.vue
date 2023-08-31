@@ -5,44 +5,37 @@
     </template>
 
     <template #filter>
-      <div
+      <FilterOptionCheckbox
         v-for="craft in crafts"
-        :key="craft.iconCardId"
-        class="filter-option"
-      >
-        <label :for="craft.name">
-          <input
-            :id="craft.name"
-            v-model="selectedCrafts"
-            type="checkbox"
-            :value="craft.name"
-            @change="emit('update:selectedCrafts', selectedCrafts)"
-          >
-          <img
-            :src="emblemUrl(craft.iconCardId)"
-            :alt="craft.name"
-            :title="craft.name"
-            class="emblem"
-          >
-        </label>
-      </div>
+        :key="craft.name"
+        v-model:selected-options="model"
+        :image-url="emblemUrl(craft.iconCardId)"
+        :filter-option="craft"
+        :label-text="craft.name"
+      />
     </template>
   </FilterTemplate>
 </template>
 
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import { Ref, ref } from 'vue';
+import FilterOptionCheckbox from '@/components/FilterOptionCheckbox.vue';
+import { computed } from 'vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
-
+const props = defineProps<{
+  selectedCrafts: string[];
+}>();
 const emit = defineEmits<{
   'update:selectedCrafts': [crafts: string[]];
 }>();
 
-const selectedCrafts: Ref<string[]> = ref([]);
 const mainStore = useMainStore();
 const { crafts } = storeToRefs(mainStore);
+const model = computed({
+  get: () => props.selectedCrafts,
+  set: (value) => emit('update:selectedCrafts', value),
+});
 
 
 const emblemUrl = ((emblemId: number | string) => {
@@ -51,38 +44,4 @@ const emblemUrl = ((emblemId: number | string) => {
 </script>
 
 <style scoped>
-.craft-filter :deep(.filter-container) {
-  display: flex;
-  flex-direction: row;
-}
-
-.filter-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.filter-option label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.filter-option label:hover,
-.filter-option label input:checked+.emblem {
-  opacity: 1;
-}
-
-.filter-option input {
-  margin-top: 0.5rem;
-  display: none;
-}
-
-.emblem {
-  width: 2rem;
-  height: 2rem;
-  opacity: 0.5;
-}
 </style>

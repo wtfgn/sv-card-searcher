@@ -5,38 +5,37 @@
     </template>
 
     <template #filter>
-      <div
+      <FilterOptionCheckbox
         v-for="cardType in types"
         :key="cardType.name"
-        class="filter-option"
-      >
-        <label>
-          <input
-            v-model="selectedTypes"
-            type="checkbox"
-            :value="cardType.name"
-            @change="emit('update:selectedTypes', selectedTypes)"
-          >
-          {{ cardType.name }}
-        </label>
-      </div>
+        v-model:selected-options="model"
+        :filter-option="cardType"
+        :label-text="cardType.name"
+      />
     </template>
   </FilterTemplate>
 </template>
 
 <script setup lang="ts">
 import FilterTemplate from '@/components/FilterTemplate.vue';
+import FilterOptionCheckbox from '@/components/FilterOptionCheckbox.vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
-import { Ref, ref } from 'vue';
+import { computed } from 'vue';
 
+const props = defineProps<{
+  selectedTypes: string[];
+}>();
 const emit = defineEmits<{
   'update:selectedTypes': [types: string[]];
 }>();
 
 const mainStore = useMainStore();
 const { types } = storeToRefs(mainStore);
-const selectedTypes: Ref<string[]> = ref([]);
+const model = computed({
+  get: () => props.selectedTypes,
+  set: (value) => emit('update:selectedTypes', value),
+});
 
 </script>
 

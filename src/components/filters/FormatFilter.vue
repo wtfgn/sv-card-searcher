@@ -5,46 +5,39 @@
     </template>
 
     <template #filter>
-      <div
+      <FilterOptionRadio
         v-for="format in formats"
         :key="format.name"
-        class="filter-option"
-      >
-        <label :for="format.name.toLowerCase()">
-          <input
-            :id="format.name.toLowerCase()"
-            v-model="selectedFormat"
-            type="radio"
-            :value="format.name"
-            @change="emit('update:selectedFormat', selectedFormat)"
-          >
-          <img
-            :src="formatUrl(format.name)"
-            :alt="format.name"
-            :title="format.name"
-            class="format"
-          >
-          {{ format.name }}
-        </label>
-      </div>
+        v-model:selected-option="model"
+        :image-url="formatUrl(format.name)"
+        :filter-option="format"
+        :label-text="format.name"
+        :radio-group="'format'"
+      />
     </template>
   </FilterTemplate>
 </template>
 
 <script setup lang='ts'>
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import { Ref, ref } from 'vue';
+import FilterOptionRadio from '@/components/FilterOptionRadio.vue';
+import { computed } from 'vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
 
-const props = defineProps<{ defaultFormat: string }>();
+const props = defineProps<{
+  selectedFormat: string
+}>();
 const emit = defineEmits<{
   'update:selectedFormat': [format: string];
 }>();
 
 const mainStore = useMainStore();
 const { formats } = storeToRefs(mainStore);
-const selectedFormat: Ref<string> = ref(props.defaultFormat); // Default value
+const model = computed({
+  get: () => props.selectedFormat,
+  set: (value) => emit('update:selectedFormat', value),
+});
 
 const formatUrl = ((format: string) => {
   return `https://shadowverse-portal.com/public/assets/image/common/global/icon_${format.toLowerCase()}.png?2023816171`

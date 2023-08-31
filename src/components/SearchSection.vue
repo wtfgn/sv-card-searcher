@@ -1,22 +1,21 @@
 <template>
   <CraftFilter
-    v-model:selectedCrafts="selectedCrafts"
+    v-model:selected-crafts="selectedCrafts"
   />
   <FormatFilter
-    v-model:selectedFormat="selectedFormat"
-    :default-format="selectedFormat"
+    v-model:selected-format="selectedFormat"
   />
   <CardPackFilter
-    v-model:selectedCardPacks="selectedCardPacks"
+    v-model:selected-card-packs="selectedCardPacks"
   />
   <CostFilter
-    v-model:selectedCosts="selectedCosts"
+    v-model:selected-costs="selectedCosts"
   />
   <TypeFilter
-    v-model:selectedTypes="selectedTypes"
+    v-model:selected-types="selectedTypes"
   />
   <RarityFilter
-    v-model:selectedRarities="selectedRarities"
+    v-model:selected-rarities="selectedRarities"
   />
 </template>
 
@@ -33,7 +32,7 @@ import { useMainStore } from '@/stores/main';
 const mainStore = useMainStore();
 
 const selectedCrafts: Ref<string[]> = ref([]);
-const selectedFormat: Ref<'rotation' | 'unlimited'> = ref('rotation');
+const selectedFormat: Ref<'Rotation' | 'Unlimted'> = ref('Rotation');
 const selectedCardPacks: Ref<string[]> = ref([]);
 const selectedCosts: Ref<string[]> = ref([]);
 const selectedTypes: Ref<string[]> = ref([]);
