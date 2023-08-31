@@ -31,3 +31,6 @@ export type Rarity = typeof categories.rarities[number]
 export type Format = typeof categories.formats[number]
 export type Type = typeof categories.types[number]
 export type Cost = typeof categories.costs[number]
+
+export type TypesOfCategory = keyof typeof categories;
+export type Category = typeof categories[TypesOfCategory][number]
