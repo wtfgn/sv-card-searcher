@@ -1,200 +1,259 @@
 {
 	"cardPacks": [
 		{
-			"name": "Heroes of Rivenbrandt"
+			"name": "Heroes of Rivenbrandt",
+			"value": 10029
 		},
 		{
-			"name": "Academy of Ages"
+			"name": "Academy of Ages",
+			"value": 10028
 		},
 		{
-			"name": "Eightfold Abyss Azvaldt"
+			"name": "Eightfold Abyss Azvaldt",
+			"value": 10027
 		},
 		{
-			"name": "Celestial Dragonblade"
+			"name": "Celestial Dragonblade",
+			"value": 10026
 		},
 		{
-			"name": "Roar of the Godwyrm"
+			"name": "Roar of the Godwyrm",
+			"value": 10025
 		},
 		{
-			"name": "Edge of Paradise"
+			"name": "Edge of Paradise",
+			"value": 10024
 		},
 		{
-			"name": "Omen of Storms"
+			"name": "Omen of Storms",
+			"value": 10023
 		},
 		{
-			"name": "Dawn of Calamity"
+			"name": "Dawn of Calamity",
+			"value": 10022
 		},
 		{
-			"name": "Renascent Chronicles"
+			"name": "Renascent Chronicles",
+			"value": 10021
 		},
 		{
-			"name": "Darkness Over Vellsar"
+			"name": "Darkness Over Vellsar",
+			"value": 10020
 		},
 		{
-			"name": "Eternal Awakening"
+			"name": "Eternal Awakening",
+			"value": 10019
 		},
 		{
-			"name": "Storm Over Rivayle"
+			"name": "Storm Over Rivayle",
+			"value": 10018
 		},
 		{
-			"name": "Fortunes Hand"
+			"name": "Fortunes Hand",
+			"value": 10017
 		},
 		{
-			"name": "World Uprooted"
+			"name": "World Uprooted",
+			"value": 10016
 		},
 		{
-			"name": "Ultimate Colosseum"
+			"name": "Ultimate Colosseum",
+			"value": 10015
 		},
 		{
-			"name": "Verdant Conflict"
+			"name": "Verdant Conflict",
+			"value": 10014
 		},
 		{
-			"name": "Rebirth of Glory"
+			"name": "Rebirth of Glory",
+			"value": 10013
 		},
 		{
-			"name": "Steel Rebellion"
+			"name": "Steel Rebellion",
+			"value": 10012
 		},
 		{
-			"name": "Altersphere"
+			"name": "Altersphere",
+			"value": 10011
 		},
 		{
-			"name": "Omen of the Ten"
+			"name": "Omen of the Ten",
+			"value": 10010
 		},
 		{
-			"name": "Brigade of the Sky"
+			"name": "Brigade of the Sky",
+			"value": 10019
 		},
 		{
-			"name": "Dawnbreak, Nightedge"
+			"name": "Dawnbreak, Nightedge",
+			"value": 10008
 		},
 		{
-			"name": "Chronogenesis"
+			"name": "Chronogenesis",
+			"value": 10007
 		},
 		{
-			"name": "Starforged Legends"
+			"name": "Starforged Legends",
+			"value": 10006
 		},
 		{
-			"name": "Wonderland Dreams"
+			"name": "Wonderland Dreams",
+			"value": 10005
 		},
 		{
-			"name": "Tempest of the Gods"
+			"name": "Tempest of the Gods",
+			"value": 10004
 		},
 		{
-			"name": "Rise of Bahamut"
+			"name": "Rise of Bahamut",
+			"value": 10003
 		},
 		{
-			"name": "Darkness Evolved"
+			"name": "Darkness Evolved",
+			"value": 10002
 		},
 		{
-			"name": "Classic"
+			"name": "Classic",
+			"value": 10001
 		},
 		{
-			"name": "Basic"
+			"name": "Basic",
+			"value": 10000
 		},
 		{
-			"name": "Token"
+			"name": "Token",
+			"value": 10000
 		}
 	],
 	"crafts": [
 		{
 			"name": "Forestcraft",
-			"iconCardId": 1111410100
+			"iconCardId": 1111410100,
+			"value": 1
 		},
 		{
 			"name": "Swordcraft",
-			"iconCardId": 1052210300
+			"iconCardId": 1052210300,
+			"value": 2
 		},
 		{
 			"name": "Runecraft",
-			"iconCardId": 900311020
+			"iconCardId": 900311020,
+			"value": 3
 		},
 		{
 			"name": "Dragoncraft",
-			"iconCardId": 1124110300
+			"iconCardId": 1124110300,
+			"value": 4
 		},
 		{
 			"name": "Shadowcraft",
-			"iconCardId": 900541090
+			"iconCardId": 900541090,
+			"value": 5
 		},
 		{
 			"name": "Bloodcraft",
-			"iconCardId": 1106110200
+			"iconCardId": 1106110200,
+			"value": 6
 		},
 		{
 			"name": "Havencraft",
-			"iconCardId": 1117410300
+			"iconCardId": 1117410300,
+			"value": 7
 		},
 		{
 			"name": "Portalcraft",
-			"iconCardId": 900841090
+			"iconCardId": 900841090,
+			"value": 8
 		},
 		{
 			"name": "Neutral",
-			"iconCardId": 1080110200
+			"iconCardId": 1080110200,
+			"value": 0
 		}
 	],
 	"rarities": [
 		{
-			"name": "Bronze"
+			"name": "Bronze",
+			"value": 1
 		},
 		{
-			"name": "Silver"
+			"name": "Silver",
+			"value": 2
 		},
 		{
-			"name": "Gold"
+			"name": "Gold",
+			"value": 3
 		},
 		{
-			"name": "Legendary"
+			"name": "Legendary",
+			"value": 4
 		}
 	],
 	"formats": [
 		{
-			"name": "Rotation"
+			"name": "Rotation",
+			"value": 1
 		},
 		{
-			"name": "Unlimited"
+			"name": "Unlimited",
+			"value": 3
 		}
 	],
 	"types": [
 		{
-			"name": "Follower"
+			"name": "Followers",
+			"value": 1
 		},
 		{
-			"name": "Spell"
+			"name": "Spell",
+			"value": 2
 		},
 		{
-			"name": "Amulet"
+			"name": "Amulets",
+			"value": 3
 		}
 	],
 	"costs": [
 		{
-			"name": "1"
+			"name": "1",
+			"value": 1
 		},
 		{
-			"name": "2"
+			"name": "2",
+			"value": 2
 		},
 		{
-			"name": "3"
+			"name": "3",
+			"value": 3
 		},
 		{
-			"name": "4"
+			"name": "4",
+			"value": 4
 		},
 		{
-			"name": "5"
+			"name": "5",
+			"value": 5
 		},
 		{
-			"name": "6"
+			"name": "6",
+			"value": 6
 		},
 		{
-			"name": "7"
+			"name": "7",
+			"value": 7
 		},
 		{
-			"name": "8"
+			"name": "8",
+			"value": 8
 		},
 		{
-			"name": "9"
+			"name": "9",
+			"value": 9
 		},
 		{
-			"name": "10_plus"
+			"name": "10_plus",
+			"value": 10
 		}
 	]
 }
