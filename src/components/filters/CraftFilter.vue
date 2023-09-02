@@ -12,6 +12,7 @@
         :image-url="emblemUrl(craft.iconCardId)"
         :filter-option="craft"
         :label-text="craft.name"
+        category="craft"
       />
     </template>
   </FilterTemplate>
@@ -44,4 +45,8 @@ const emblemUrl = ((emblemId: number | string) => {
 </script>
 
 <style scoped>
+.craft-filter :deep(.filter-option) {
+  @apply
+  h-16
+}
 </style>

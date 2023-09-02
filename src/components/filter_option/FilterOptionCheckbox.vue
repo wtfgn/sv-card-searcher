@@ -1,24 +1,42 @@
 <template>
   <div
-    class="filter-option flex flex-col items-center mr-8"
+    class="
+      filter-option group
+      flex flex-col items-center justify-center flex-1
+      w-20 h-12
+      mr-8
+      "
   >
-    <label
-      class="flex flex-col items-center cursor-pointer"
+    <input
+      :id="filterOption.name"
+      v-model="model"
+      type="checkbox"
+      :name="category"
+      :value="filterOption.value"
+      class="hidden peer"
     >
-      <input
-        v-model="model"
-        type="checkbox"
-        :value="filterOption.name"
-        class=""
-      >
+    <label
+      :for="filterOption.name"
+      class="
+        flex flex-col items-center justify-center
+        cursor-pointer w-full h-full
+        peer-checked:opacity-100 opacity-50
+        bg-gray-700 rounded-3xl
+        text-gray-200"
+    >
       <img
         v-if="imageUrl"
         :src="imageUrl"
         :alt="filterOption.name"
         :title="filterOption.name"
-        class="w-8 h-8 opacity-50 hover:opacity-100"
+        class="
+          w-8 h-8"
       >
-      {{ labelText }}
+      <span
+        v-if="labelText"
+        class="
+          peer-checked:opacity-100"
+      > {{ labelText }}</span>
     </label>
   </div>
 </template>
@@ -30,7 +48,8 @@ const props = defineProps<{
   filterOption: Category;
   imageUrl?: string;
   selectedOptions: string[];
-  labelText: string;
+  labelText?: string;
+  category: string;
 }>();
 
 const emit = defineEmits<{

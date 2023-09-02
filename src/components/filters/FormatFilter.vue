@@ -44,4 +44,18 @@ const formatUrl = ((format: string) => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.format-filter :deep(.filter-container) {
+  @apply
+  h-full items-center gap-4
+}
+.format-filter :deep(.filter-option) {
+  @apply
+  mr-0 flex-1 w-full h-full
+}
+
+.format-filter :deep(.filter-option) img {
+  @apply
+  w-20 h-20
+}
+</style>
