@@ -10,8 +10,8 @@
         :key="cost.name"
         v-model:selected-options="model"
         :filter-option="cost"
-        :label-text="cost.name"
         :image-url="costUrl(cost)"
+        category="cost"
       />
     </template>
   </FilterTemplate>
@@ -45,4 +45,5 @@ const costUrl = ((cost: Cost) => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

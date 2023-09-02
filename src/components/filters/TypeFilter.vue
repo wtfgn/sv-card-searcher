@@ -11,6 +11,7 @@
         v-model:selected-options="model"
         :filter-option="cardType"
         :label-text="cardType.name"
+        category="type"
       />
     </template>
   </FilterTemplate>
@@ -39,4 +40,5 @@ const model = computed({
 
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -11,6 +11,7 @@
         v-model:selected-options="model"
         :filter-option="cardPack"
         :label-text="cardPack.name"
+        category="cardPack"
       />
     </template>
   </FilterTemplate>
@@ -41,8 +42,21 @@ const model = computed({
 
 <style scoped>
 .card-pack-filter :deep(.filter-container) {
-  display: flex;
-  flex-direction: column;
+  @apply
+  flex flex-nowrap flex-col content-none justify-normal
+  overflow-y-auto h-40
+}
+
+.card-pack-filter :deep(.filter-option) {
+  @apply
+  flex flex-col items-center
+  mr-0 mb-0
+  w-auto
+}
+
+.card-pack-filter :deep(.filter-option) label {
+  @apply
+  rounded-none h-9
 }
 
 </style>
