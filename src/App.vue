@@ -1,7 +1,9 @@
 <template>
   <Suspense>
     <template #default>
-      <SearchSection />
+      <SearchSection
+        class=""
+      />
     </template>
 
     <template #fallback>
