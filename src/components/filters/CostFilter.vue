@@ -46,4 +46,8 @@ const costUrl = ((cost: Cost) => {
 </script>
 
 <style scoped>
+.cost-filter :deep(.filter-option) label  {
+  @apply
+  bg-transparent
+}
 </style>
