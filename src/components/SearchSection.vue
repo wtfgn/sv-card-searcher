@@ -1,22 +1,47 @@
 <template>
-  <CraftFilter
-    v-model:selected-crafts="selectedCrafts"
-  />
-  <FormatFilter
-    v-model:selected-format="selectedFormat"
-  />
-  <CardPackFilter
-    v-model:selected-card-packs="selectedCardPacks"
-  />
-  <CostFilter
-    v-model:selected-costs="selectedCosts"
-  />
-  <TypeFilter
-    v-model:selected-types="selectedTypes"
-  />
-  <RarityFilter
-    v-model:selected-rarities="selectedRarities"
-  />
+  <form
+    class="search-section flex flex-col border-white border-2 p-4"
+    action="/cards"
+    method="GET"
+  >
+    <CraftFilter
+      v-model:selected-crafts="selectedCrafts"
+    />
+    <div class="flex flex-row content-evenly justify-evenly gap-4">
+      <CardPackFilter
+        v-model:selected-card-packs="selectedCardPacks"
+        class="flex-1"
+      />
+      <FormatFilter
+        v-model:selected-format="selectedFormat"
+        class="flex-1"
+      />
+    </div>
+    <CostFilter
+      v-model:selected-costs="selectedCosts"
+    />
+    <div class="flex flex-row content-evenly justify-evenly gap-4">
+      <TypeFilter
+        v-model:selected-types="selectedTypes"
+        class="flex-1"
+      />
+      <RarityFilter
+        v-model:selected-rarities="selectedRarities"
+        class="flex-1"
+      />
+    </div>
+    <div class="buttons flex flex-row content-evenly justify-evenly gap-4">
+      <button
+        type="submit"
+        class="
+			bg-gray-400 rounded-full text-gray-800 w-1/2 h-12 text-xl font-bold
+			hover:bg-gray-300 active:bg-gray-500
+			focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+      >
+        Fetch Cards Data
+      </button>
+    </div>
+  </form>
 </template>
 
 <script setup lang="ts">
