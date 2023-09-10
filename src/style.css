@@ -3,48 +3,31 @@
 @tailwind utilities;
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  /* background: linear-gradient(90deg,rgba(0,2,4,.95) 0,rgba(23,53,75,0) 50.14%,rgba(0,2,4,.95) 100%),url(./assets/background/bg_common-repeat.png) left top/432px auto repeat; */
+  @apply font-serif
+    leading-6
+    font-normal
+    text-[#fff6e1]
+    bg-[#002140]
+    bg-repeat-gradient-background
+    bg-repeat
+    bg-auto
+    antialiased;
 }
 
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+  @apply m-0
+  flex
+  place-items-center
+  min-w-[320px]
+  min-h-screen;
 }
 
 #app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid #eaeaea;
+  @apply max-w-7xl
+  mx-auto
+  my-0
+  p-8
+  text-center
+  font-medium;
 }
-
-/* @media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
-} */
-
-
