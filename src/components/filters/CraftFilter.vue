@@ -5,7 +5,7 @@
     </template>
 
     <template #filter>
-      <ul class="flex flex-wrap flex-row place-content-evenly gap-4">
+      <ul class="flex flex-wrap flex-row place-content-evenly gap-2">
         <FilterFormCheckbox
           v-for="craft in crafts"
           :key="craft.name"

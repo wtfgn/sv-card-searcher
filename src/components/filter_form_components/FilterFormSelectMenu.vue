@@ -21,7 +21,7 @@
       >
         <ListboxOptions
           as="ul"
-          class="absolute overflow-auto z-10 w-full py-1 mt-1 text-base rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          class="absolute overflow-auto z-10 bottom-full w-full mb-2 text-base rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
         >
           <ListboxOption
             v-for="categoryOption in categoryOptions"
@@ -32,12 +32,12 @@
           >
             <li
               :class="[
-                active | selected ? 'bg-gray-600 text-white' : 'text-gray-300',
+                active | selected ? 'bg-gray-800 text-white' : 'text-gray-300',
                 'relative py-2 pl-3 cursor-default select-none pr-4 bg-gray-700 first:rounded-t-md last:rounded-b-md whitespace-nowrap',
               ]"
             >
               <div :class="[selected ? 'font-semibold' : 'font-normal', 'flex items-center']">
-                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">
+                <span :class="['block truncate']">
                   {{ categoryOption.name }}
                 </span>
               </div>
