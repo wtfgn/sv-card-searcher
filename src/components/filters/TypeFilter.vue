@@ -5,21 +5,23 @@
     </template>
 
     <template #filter>
-      <FilterOptionCheckbox
-        v-for="cardType in types"
-        :key="cardType.name"
-        v-model:selected-options="model"
-        :filter-option="cardType"
-        :label-text="cardType.name"
-        category="type"
-      />
+      <ul class="flex flex-wrap flex-row place-content-evenly gap-4">
+        <FilterFormCheckbox
+          v-for="cardType in types"
+          :key="cardType.name"
+          v-model:selected-options="model"
+          :filter-option="cardType"
+          :label-text="cardType.name"
+          category="type"
+        />
+      </ul>
     </template>
   </FilterTemplate>
 </template>
 
 <script setup lang="ts">
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import FilterOptionCheckbox from '@/components/filter_option/FilterOptionCheckbox.vue';
+import FilterFormCheckbox from '@/components/filter_form_components/FilterFormCheckbox.vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
@@ -37,8 +39,6 @@ const model = computed({
   get: () => props.selectedTypes,
   set: (value) => emit('update:selectedTypes', value),
 });
-
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -5,28 +5,31 @@
     </template>
 
     <template #filter>
-      <FilterOptionRadio
-        v-for="format in formats"
-        :key="format.name"
-        v-model:selected-option="model"
-        :image-url="formatUrl(format.name)"
-        :filter-option="format"
-        :label-text="format.name"
-        :radio-group="'format'"
-      />
+      <ul class="flex flex-wrap flex-row place-content-evenly gap-4 h-full">
+        <FilterFormRadio
+          v-for="format in formats"
+          :key="format.name"
+          v-model:selected-option="model"
+          :image-url="imageUrl(format)"
+          :filter-option="format"
+          :label-text="format.name"
+          :category="'format'"
+        />
+      </ul>
     </template>
   </FilterTemplate>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import FilterTemplate from '@/components/FilterTemplate.vue';
-import FilterOptionRadio from '@/components/filter_option/FilterOptionRadio.vue';
+import FilterFormRadio from '@/components/filter_form_components/FilterFormRadio.vue';
 import { computed } from 'vue';
 import { useMainStore } from '@/stores/main';
 import { storeToRefs } from 'pinia';
+import { FormatOption } from '@/types';
 
 const props = defineProps<{
-  selectedFormat: string
+  selectedFormat: string;
 }>();
 const emit = defineEmits<{
   'update:selectedFormat': [format: string];
@@ -34,28 +37,25 @@ const emit = defineEmits<{
 
 const mainStore = useMainStore();
 const { formats } = storeToRefs(mainStore);
+
+const imageUrl = (format: FormatOption) =>
+  `https://shadowverse-portal.com/public/assets/image/common/global/icon_${format.name.toLowerCase()}.png`;
+
 const model = computed({
   get: () => props.selectedFormat,
   set: (value) => emit('update:selectedFormat', value),
-});
-
-const formatUrl = ((format: string) => {
-  return `https://shadowverse-portal.com/public/assets/image/common/global/icon_${format.toLowerCase()}.png?2023816171`
 });
 </script>
 
 <style scoped>
 .format-filter :deep(.filter-container) {
-  @apply
-  h-full items-center gap-4
+  @apply h-full gap-4;
 }
 .format-filter :deep(.filter-option) {
-  @apply
-  mr-0 flex-1 w-full h-full
+  @apply mr-0 h-full;
 }
 
 .format-filter :deep(.filter-option) img {
-  @apply
-  w-20 h-20
+  @apply w-20 h-20;
 }
 </style>
