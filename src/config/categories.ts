@@ -1,5 +1,6 @@
 export const cardPacks = {
-  Heroesof_Rivenbrandt: { name: 'Heroes of Rivenbrandt', value: 10029 },
+  Order_Shift: { name: 'Order Shift', value: 10030 },
+  Heroes_of_Rivenbrandt: { name: 'Heroes of Rivenbrandt', value: 10029 },
   Academy_of_Ages: { name: 'Academy of Ages', value: 10028 },
   Eightfold_Abyss_Azvaldt: { name: 'Eightfold Abyss Azvaldt', value: 10027 },
   Celestial_Dragonblade: { name: 'Celestial Dragonblade', value: 10026 },
@@ -145,7 +146,7 @@ export const traits = {
   Commander: { name: 'Commander', value: 2 },
   Earth_Sigil: { name: 'Earth Sigil', value: 3 },
   Mysteria: { name: 'Mysteria', value: 4 },
-  Artiface: { name: 'Artiface', value: 5 },
+  Artifact: { name: 'Artifact', value: 5 },
   Loot: { name: 'Loot', value: 6 },
   Machina: { name: 'Machina', value: 7 },
   Levin: { name: 'Levin', value: 8 },
